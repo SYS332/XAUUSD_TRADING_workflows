@@ -46,8 +46,7 @@ An optional path can log each trade to a structured database. Google Sheets or N
 📡 Integration with MT5
 This workflow expects a webhook POST call from your EA using this format:
 
-json
-Copy code
+# json
 {
   "symbol": "XAUUSD",
   "entry": 2350.50,
@@ -59,7 +58,4 @@ Copy code
   "worst_case": "SL Hit: -45 pips"
 }
 The EA must detect SMC conditions and use WebRequest() to send this JSON payload to:
-
-bash
-Copy code
-https://your-n8n-domain.com/webhook/xauusd-smc
+ # go to workflows: https://aaassgfdhfi79.app.n8n.cloud/workflow/99clIPgLgTgozzk4
