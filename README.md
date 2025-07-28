@@ -47,17 +47,6 @@ An optional path can log each trade to a structured database. Google Sheets or N
 This workflow expects a webhook POST call from your EA using this format:
 
 # json
-*
-{
-  "symbol": "XAUUSD",
-  "entry": 2350.50,
-  "sl": 2346.00,
-  "tp": 2362.00,
-  "session": "New York",
-  "reason": "FVG + BOS + Liquidity sweep",
-  "best_case": "TP Hit: +115 pips",
-  "worst_case": "SL Hit: -45 pips"
-}
-*
+<pre> ```mql5 string payload = "{\"symbol\":\"XAUUSD\",\"entry\":2350.50,\"sl\":2346.00,\"tp\":2362.00,\"session\":\"New York\",\"reason\":\"FVG + BOS + Liquidity sweep\",\"best_case\":\"TP Hit: +115 pips\",\"worst_case\":\"SL Hit: -45 pips\"}"; char data[]; StringToCharArray(payload, data); char result[]; string webhook = "https://your-n8n.com/webhook/xauusd-smc"; int timeout = 5000; int res = WebRequest("POST", webhook, "application/json", "", timeout, data, result, NULL); ``` </pre>
 The EA must detect SMC conditions and use WebRequest() to send this JSON payload to:
  # go to workflows: https://aaassgfdhfi79.app.n8n.cloud/workflow/99clIPgLgTgozzk4
